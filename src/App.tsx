@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body"
 import {Footer} from "./site/Footer";
 import {NewComponent} from "./site/NewComponent";
+import {CarsTable} from "./site/CarsTable";
 
 //BLL
 const students = [
@@ -21,12 +21,22 @@ const students = [
     {id: 11, name: "Christopher", age: 100},
 ]
 
+const topCars = [
+    {manufacturer:'BMW', model:'m5cs'},
+    {manufacturer:'Mercedes', model:'e63s'},
+    {manufacturer:'Audi', model:'rs6'}
+]
+
 
 // UI
 function App() {
     return (
         <>
+            <CarsTable list={topCars}/>
+            <hr/>
             <NewComponent students={students}/>
+            <hr/>
+
             <Header title='New Body'/>
             <Body titleForBody='New Body'/>
             <Footer titleForFooter='New Body'/>
