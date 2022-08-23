@@ -1,23 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Button} from "./components/Button";
 
 
 // UI
 function App() {
-    const button1Foo = (subscriber: string) => {
-        console.log(subscriber)
+    let [a, setA] = useState(1);
+
+    const onClickHandler = () => {
+        setA(++a);
     }
 
-    const button3Foo = () => {
-        console.log("Im stupid button")
+    const reset = () => {
+        setA(a = 0)
     }
 
     return (
         <div>
-            <Button name="MyYouTubeChanel - 1" callBack={()=>button1Foo('Im Vasya')}/>
-            <Button name="MyYouTubeChanel - 2" callBack={()=>button1Foo('Im Ivan')}/>
-            <Button name="MyYouTubeChanel - 3" callBack={button3Foo}/>
+           <h1>{a}</h1>
+            <button onClick={onClickHandler}>num+</button>
+            <button onClick={reset}>0</button>
         </div>
     );
 }
