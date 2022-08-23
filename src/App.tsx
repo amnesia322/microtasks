@@ -1,27 +1,23 @@
 import React from 'react';
 import './App.css';
+import {Button} from "./components/Button";
 
 
 // UI
 function App() {
-    /*const myFirstSubscriber = () => {
-        console.log("Hello! I`m Vasya!")
+    const button1Foo = (subscriber: string) => {
+        console.log(subscriber)
     }
-    const mySecondSubscriber = () => {
-        console.log("Hello! I`m Ivan!")
-    }*/
 
-      const onClickHandler = (name: string) => {
-          return console.log(name)
-      }
-
+    const button3Foo = () => {
+        console.log("Im stupid button")
+    }
 
     return (
         <div>
-            <button onClick={()=>onClickHandler('Vasya')}>MyYouTubeChanel - 1</button>
-            <button onClick={()=>onClickHandler('Ivan')}>MyYouTubeChanel - 2</button>
-
-
+            <Button name="MyYouTubeChanel - 1" callBack={()=>button1Foo('Im Vasya')}/>
+            <Button name="MyYouTubeChanel - 2" callBack={()=>button1Foo('Im Ivan')}/>
+            <Button name="MyYouTubeChanel - 3" callBack={button3Foo}/>
         </div>
     );
 }
